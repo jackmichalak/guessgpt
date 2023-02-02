@@ -1,0 +1,7 @@
+A tort, in its essence, constitutes a legal wrong of a civil nature, emanating from a volitional act or an omission that begets injury or harm to another person's person or property. Its purpose is to afford redress to the aggrieved party, by way of compensatory measures, in order to ameliorate the consequences of the wrong inflicted.
+
+The edifice of tort law is constructed upon a foundation of common law, statutory law, and judicial precedent, and as such, is susceptible to variations and nuances based on the jurisdiction in question. In some states, the law of torts is based strictly on common law principles, while in others, it is an eclectic conglomeration of common law and statutory law.
+
+Doctrinal dissimilarities, in the law of torts, are not uncommon, and may take form based on the jurisdiction, as well as the type of tort in question. For instance, the principle of comparative negligence, which apportions liability between multiple parties based on their respective degrees of fault, is recognized in some states, while the doctrine of contributory negligence, which operates to bar recovery by an injured party if they were partially at fault, prevails in others.
+
+Additionally, the statute of limitations, which represents the window of opportunity within which a tort claim must be lodged, can also exhibit considerable variability across different states. The statute of limitations for personal injury torts, for instance, may be two years in some states, while it may be three years in others.
