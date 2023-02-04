@@ -1,0 +1,25 @@
+Making an HTTP DELETE Request:
+A Guide to Successful Resource Deletion
+
+Deleting a resource on your server is as easy as sending an HTTP DELETE request. Here's what you need to do:
+
+    Identify the URL of the resource you want to delete.
+
+    Craft your DELETE request:
+        Request line: Start with "DELETE" followed by the URL of the resource.
+        Header fields: Add fields for extra information, such as "Accept" or "Authorization".
+        Blank line: Separate the header fields from the message body.
+        Message body: (Optional) Add information to send with the request.
+
+    Send your request to the server.
+    You can use tools like cURL or Postman,
+    or send it manually using a socket connection.
+
+    The server will process your request and send back a response,
+    including a status code.
+    A code of 204 No Content means your resource was deleted.
+    A 404 Not Found means the resource could not be found.
+
+Before making a DELETE request, make sure you have proper authorization
+and the resource is specified in the endpoint's documentation.
+Follow these steps and you'll say goodbye to your resources in no time!
