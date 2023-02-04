@@ -1,60 +1,125 @@
 <html>
-  <head>
-    <style>
-      textarea {
-        width: 500px;
-        height: 300px;
-        margin: 0 auto;
-        display: block;
-      }
-      body {
-        background-color: lightblue;
-        text-align: center;
-      }
-      .result {
-        font-size: 20px;
-        font-weight: bold;
-      }
-    </style>
-    <script>
-      function submitForm() {
-        const progress = document.getElementById("progress");
-        const results = document.getElementById("results");
-        const textArray = [
-          "Contacting Pythia...",
-          "Asking Nostradamus...",
-          "Sparking up a joint for Taylor..."
-        ];
 
-        progress.innerHTML = "Processing...";
-        results.innerHTML = "";
+<head>
+  <style>
+    textarea {
+      width: 500px;
+      height: 300px;
+      margin: 0 auto;
+      display: block;
+    }
 
-        let i = 0;
-        const intervalId = setInterval(function() {
-          if (i === textArray.length) {
-            clearInterval(intervalId);
-            progress.innerHTML = "Done!";
-            const result = Math.random() < 0.5 ? "Human" : "AI";
-            results.innerHTML = `<div class="result">Result: ${result}</div>`;
-            return;
-          }
-          progress.innerHTML = textArray[i];
-          i++;
-        }, 1000);
+    body {
+      background-color: lightblue;
+      text-align: center;
+    }
+
+    .result {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .faq-section {
+      cursor: pointer;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-left: 20px;
+      padding: 10px;
+      background-color: #ddd;
+    }
+
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+  <script>
+    function submitForm() {
+      const progress = document.getElementById("progress");
+      const results = document.getElementById("results");
+      const textArray = [
+        "Contacting Pythia...",
+        "Asking Nostradamus...",
+        "Sparking up a joint for Taylor..."
+      ];
+
+      progress.innerHTML = "Processing...";
+      results.innerHTML = "";
+
+      let i = 0;
+      const intervalId = setInterval(function () {
+        if (i === textArray.length) {
+          clearInterval(intervalId);
+          progress.innerHTML = "Done!";
+          const result = Math.random() < 0.5 ? "Human" : "AI";
+          results.innerHTML = `<div class="result">Result: ${result}</div>`;
+          return;
+        }
+        progress.innerHTML = textArray[i];
+        i++;
+      }, 1000);
+    }
+
+    function toggleFAQ(event) {
+      const faqAnswer = event.currentTarget.nextElementSibling;
+      if (faqAnswer.style.display === "block") {
+        faqAnswer.style.display = "none";
+      } else {
+        faqAnswer.style.display = "block";
       }
-    </script>
-  </head>
-  <body>
-    <textarea id="textInput"></textarea><br><br>
-    <div id="progress">Waiting for input...</div><br><br>
-    <button id="submitBtn" onclick="submitForm()">Submit</button><br><br>
-    <div id="results"></div><br><br>
-    <div>
-      <b>FAQ:</b><br>
-      What is the purpose of this page?<br>
-      This page is a demonstration of how to display text in intervals using JavaScript.<br><br>
-      Why does the result randomly say "Human" or "AI"?<br>
-      The result randomly says "Human" or "AI" to show how you can use randomness in your code.
+    }
+  </script>
+</head>
+
+<body>
+  <h1>GuessGPT</h1><br><br>
+  <textarea id="textInput"></textarea><br><br>
+  <div id="progress">Waiting for input...</div><br><br>
+  <button id="submitBtn" onclick="submitForm()">Submit</button><br><br>
+  <div id="results"></div><br><br>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Actual</th>
+        <th><a href="https://gptzero.me/">GPTZero</a></th>
+        <th><a href="https://platform.openai.com/ai-text-classifier">OpenAI</a></th>
+        <th><a href="https://gptkit.ai/">GPTKit</a></th>
+        <th><a href="https://hivemoderation.com/ai-generated-content-detection">Hive</a></th>
+        <th>GuessGPT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://www.bbc.com/news/world-us-canada-64294915">BBC Article</a></td>
+        <td>Human</td>
+        <td>Human</td>
+        <td>Human</td>
+        <td>Human</td>
+        <td>Human</td>
+        <td>Human</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <b>FAQ:</b><br>
+    <div class="faq-section" onclick="toggleFAQ(event)">What is the purpose of this page?</div>
+    <div class="faq-answer">This page is a demonstration of how to display text in intervals using JavaScript.</div>
+    <div class="faq-section" onclick="toggleFAQ(event)">Why does the result randomly say "Human" or "AI"?</div>
+    <div class="faq-answer">The result randomly says "Human" or "AI" to show how you can use randomness in your code.
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
