@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <style>
+      textarea {
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        display: block;
+      }
+      body {
+        background-color: lightblue;
+        text-align: center;
+      }
+      .result {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      function submitForm() {
+        const progress = document.getElementById("progress");
+        const results = document.getElementById("results");
+        const textArray = [
+          "Contacting Pythia...",
+          "Asking Nostradamus...",
+          "Sparking up a joint for Taylor..."
+        ];
+
+        progress.innerHTML = "Processing...";
+        results.innerHTML = "";
+
+        let i = 0;
+        const intervalId = setInterval(function() {
+          if (i === textArray.length) {
+            clearInterval(intervalId);
+            progress.innerHTML = "Done!";
+            const result = Math.random() < 0.5 ? "Human" : "AI";
+            results.innerHTML = `<div class="result">Result: ${result}</div>`;
+            return;
+          }
+          progress.innerHTML = textArray[i];
+          i++;
+        }, 1000);
+      }
+    </script>
+  </head>
+  <body>
+    <textarea id="textInput"></textarea><br><br>
+    <div id="progress">Waiting for input...</div><br><br>
+    <button id="submitBtn" onclick="submitForm()">Submit</button><br><br>
+    <div id="results"></div><br><br>
+    <div>
+      <b>FAQ:</b><br>
+      What is the purpose of this page?<br>
+      This page is a demonstration of how to display text in intervals using JavaScript.<br><br>
+      Why does the result randomly say "Human" or "AI"?<br>
+      The result randomly says "Human" or "AI" to show how you can use randomness in your code.
+    </div>
+  </body>
+</html>
